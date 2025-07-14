@@ -10,9 +10,9 @@ import { MapPin, Plane, Compass, Camera } from 'lucide-react';
 gsap.registerPlugin(ScrollTrigger);
 
 export default function AboutSection() {
-  const sectionRef   = useRef(null);
-  const titleRef     = useRef(null);
-  const contentRef   = useRef(null);
+  const sectionRef   = useRef<HTMLElement | null>(null);
+  const titleRef     = useRef<HTMLHeadingElement | null>(null);
+  const contentRef   = useRef<HTMLDivElement | null>(null);
 
   /* ───────────────────────── GSAP PIN + FADE IN ───────────────────────── */
   useEffect(() => {
@@ -48,22 +48,24 @@ export default function AboutSection() {
     );
 
     // animate each feature card
-    gsap.fromTo(
-      content.children,
-      { y: 100, opacity: 0 },
-      {
-        y: 0,
-        opacity: 1,
-        duration: 1,
-        stagger: 0.2,
-        scrollTrigger: {
-          trigger: content,
-          start: 'top 80%',
-          end: 'top 20%',
-          scrub: true,
-        },
-      }
-    );
+    if (content && content.children) {
+      gsap.fromTo(
+        Array.from(content.children),
+        { y: 100, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 1,
+          stagger: 0.2,
+          scrollTrigger: {
+            trigger: content,
+            start: 'top 80%',
+            end: 'top 20%',
+            scrub: true,
+          },
+        }
+      );
+    }
 
     return () => ScrollTrigger.getAll().forEach(t => t.kill());
   }, []);

@@ -9,8 +9,8 @@ import { Monitor, Smartphone, Palette, Rocket, Database, Shield } from 'lucide-r
 gsap.registerPlugin(ScrollTrigger);
 
 export default function ServicesSection() {
-  const sectionRef = useRef<HTMLElement>(null);
-  const containerRef = useRef<HTMLDivElement>(null);
+  const sectionRef = useRef<HTMLElement | null>(null);
+  const containerRef = useRef<HTMLDivElement | null>(null);
   const cardsRef = useRef<HTMLDivElement[]>([]);
 
   const services = [

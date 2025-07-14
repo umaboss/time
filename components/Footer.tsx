@@ -6,31 +6,33 @@ import { gsap } from 'gsap';
 import { Heart, Code, Zap } from 'lucide-react';
 
 export default function Footer() {
-  const footerRef = useRef<HTMLElement>(null);
+  const footerRef = useRef<HTMLElement | null>(null);
 
   useEffect(() => {
     const footer = footerRef.current;
     if (!footer) return;
 
     // Animate footer elements
-    gsap.fromTo(footer.children,
-      {
-        y: 50,
-        opacity: 0,
-      },
-      {
-        y: 0,
-        opacity: 1,
-        duration: 1,
-        stagger: 0.2,
-        ease: 'power3.out',
-        scrollTrigger: {
-          trigger: footer,
-          start: 'top 90%',
-          toggleActions: 'play none none reverse',
+    if (footer && footer.children) {
+      gsap.fromTo(Array.from(footer.children),
+        {
+          y: 50,
+          opacity: 0,
         },
-      }
-    );
+        {
+          y: 0,
+          opacity: 1,
+          duration: 1,
+          stagger: 0.2,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: footer,
+            start: 'top 90%',
+            toggleActions: 'play none none reverse',
+          },
+        }
+      );
+    }
   }, []);
 
   const footerLinks = [

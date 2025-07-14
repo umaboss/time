@@ -39,9 +39,9 @@ const hotelData = [
 ];
 
 const ServiceNew = () => {
-  const sectionRef = useRef(null);
-  const containerRef = useRef(null);
-  const cardsRef = useRef([]);
+  const sectionRef = useRef<HTMLElement | null>(null);
+  const containerRef = useRef<HTMLDivElement | null>(null);
+  const cardsRef = useRef<HTMLDivElement[]>([]);
 
   useEffect(() => {
     const section = sectionRef.current;

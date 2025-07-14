@@ -9,7 +9,7 @@ import { ArrowRight, ExternalLink } from 'lucide-react';
 gsap.registerPlugin(ScrollTrigger);
 
 export default function StickyScrollCards() {
-  const containerRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement | null>(null);
   const cardsRef = useRef<HTMLDivElement[]>([]);
 
   const cards = [

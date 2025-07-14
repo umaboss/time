@@ -10,7 +10,7 @@ import { ExternalLink, MapPin, Eye } from 'lucide-react';
 gsap.registerPlugin(ScrollTrigger);
 
 export default function PlacesSection() {
-  const sectionRef = useRef(null);
+  const sectionRef = useRef<HTMLElement | null>(null);
 
   /* ---------- PLACE DATA ---------- */
   const places = [
@@ -69,7 +69,7 @@ export default function PlacesSection() {
   /* ---------- GSAP STICKY ZOOM ---------- */
   useEffect(() => {
     const ctx = gsap.context(() => {
-      const cards = gsap.utils.toArray('.sticky-card');
+      const cards = gsap.utils.toArray('.sticky-card') as HTMLElement[];
       cards.forEach(card => {
         gsap.fromTo(
           card,
@@ -125,7 +125,7 @@ export default function PlacesSection() {
                 className="absolute inset-0 w-full h-full object-cover"
               />
               <div
-                className={`absolute inset-0 bg-gradient-to-t ${p.gradient} opacity-60`}
+                className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent opacity-60"
               />
               <div className="absolute inset-0 bg-black/60" />
 

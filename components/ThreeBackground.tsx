@@ -53,7 +53,7 @@ export default function ThreeBackground() {
     scene.add(torus);
 
     // Create floating cubes
-    const cubes = [];
+    const cubes: THREE.Mesh[] = [];
     for (let i = 0; i < 50; i++) {
       const cubeGeometry = new THREE.BoxGeometry(0.5, 0.5, 0.5);
       const cubeMaterial = new THREE.MeshBasicMaterial({

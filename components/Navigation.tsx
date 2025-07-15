@@ -55,13 +55,13 @@ export default function Navigation() {
               className="text-white/80 hover:text-white transition-colors relative group"
             >
               {item.name}
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-[#00ff88] to-[#ff0080] transition-all group-hover:w-full" />
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-[#00cfff] to-[#0044ff] transition-all group-hover:w-full" />
             </motion.a>
           ))}
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="px-6 py-2 bg-gradient-to-r from-[#00ff88] to-[#ff0080] text-black font-semibold rounded-full"
+            className="px-6 py-2 bg-gradient-to-r from-[#00cfff] to-[#0044ff] text-black font-semibold rounded-full"
           >
             Get Started
           </motion.button>

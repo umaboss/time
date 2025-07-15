@@ -118,12 +118,12 @@ export default function AboutSection() {
         <div>
           <h2
             ref={titleRef}
-            className="text-4xl md:text-6xl font-bold mb-8 leading-tight"
+            className="  mb-8 leading-tight"
           >
-            <span className="block text-white">Turning Journeys into</span>
-            <span className="block bg-gradient-to-r from-[#00ff88] to-[#ff0080] bg-clip-text text-transparent">
+            <strong className="block mb-[10px] text-[18px] text-white">Turning Journeys into</strong>
+            <h2 className="block text-bold text-[42px] bg-gradient-to-r from-[#00ff88] to-[#ff0080] bg-clip-text ">
               Lifetime Memories
-            </span>
+            </h2>
           </h2>
 
           <div className="space-y-6 text-gray-300 text-lg leading-relaxed">
@@ -136,10 +136,6 @@ export default function AboutSection() {
               platform blends AI smarts with local insights so every trip feels
               tailor‑made.
             </p>
-            <p>
-              Pack your bags—let’s map out moments you’ll talk about for years
-              to come.
-            </p>
           </div>
 
           <motion.div
@@ -147,7 +143,7 @@ export default function AboutSection() {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <button className="px-8 py-4 bg-gradient-to-r from-[#00ff88] to-[#ff0080] text-black font-bold rounded-full text-lg shadow-lg hover:shadow-xl transition-all">
+            <button className="px-8 py-4  bg-gradient-to-r from-[#00cfff] to-[#0044ff] text-black font-bold rounded-full text-lg shadow-lg hover:shadow-xl transition-all">
               Discover Our Story
             </button>
           </motion.div>

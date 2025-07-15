@@ -19,7 +19,7 @@ export default function StickyScrollCards() {
       subtitle: "Popular Places",
       description: "Discover the best places to visit, eat, and explore in the city. From iconic landmarks to hidden gems, find out what’s trending and loved by locals and travelers alike.",
       image: "/assests/pace.jpg",
-      gradient: "from-[#00ff88] to-[#00cc6a]",
+      gradient: "from-[#3ABEFF] to-[#004D99]",
       bgColor: "#001a0d",
     },
     {
@@ -28,7 +28,7 @@ export default function StickyScrollCards() {
       subtitle: "Resturant",
       description: "Find the best places to eat around you! From local street food to top-rated fine dining, explore restaurants that satisfy every taste and mood.",
       image: "/assests/resturn.jpg",
-      gradient: "from-[#ff0080] to-[#cc0066]",
+      gradient: "from-[#3ABEFF] to-[#004D99]",
       bgColor: "#1a0010",
     },
     {
@@ -37,7 +37,7 @@ export default function StickyScrollCards() {
       subtitle: "Travel",
       description: "Plan your perfect trip with top travel spots, scenic destinations, and must-see attractions. Discover new places and create unforgettable memories",
       image: "/assests/travel.jpg",
-      gradient: "from-[#ff8000] to-[#cc6600]",
+      gradient: "from-[#3ABEFF] to-[#004D99]",
       bgColor: "#1a1000",
     },
     {
@@ -46,7 +46,7 @@ export default function StickyScrollCards() {
       subtitle: "Business Intelligence",
       description: "Transforming raw data into actionable insights that drive business growth and informed decision-making.",
       image: "https://images.pexels.com/photos/373543/pexels-photo-373543.jpeg?auto=compress&cs=tinysrgb&w=800",
-      gradient: "from-[#8000ff] to-[#6600cc]",
+      gradient: "from-[#3ABEFF] to-[#004D99]",
       bgColor: "#100a1a",
     },
   ];
@@ -218,15 +218,6 @@ export default function StickyScrollCards() {
                     Learn More
                     <ArrowRight size={20} />
                   </motion.button>
-                  
-                  <motion.button
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="flex items-center gap-3 px-8 py-4 border-2 border-white/20 text-white font-bold rounded-full text-lg hover:border-white/40 transition-all"
-                  >
-                    View Project
-                    <ExternalLink size={20} />
-                  </motion.button>
                 </motion.div>
               </div>
 
@@ -244,7 +235,7 @@ export default function StickyScrollCards() {
                     alt={card.title}
                     className="w-full h-96 object-cover transition-transform duration-700 group-hover:scale-110"
                   />
-                  <div className={`absolute inset-0 bg-gradient-to-t ${card.gradient} opacity-20 group-hover:opacity-40 transition-opacity duration-500`} />
+                  <div className={`absolute inset-0 bg-gradient-to-t opacity-20 group-hover:opacity-40 transition-opacity duration-500`} />
                   
                   {/* Floating elements */}
                   <div className="absolute inset-0">

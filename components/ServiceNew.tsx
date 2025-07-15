@@ -90,7 +90,7 @@ const ServiceNew = () => {
       {/* Background Layers */}
       <div className="absolute inset-0 bg-gradient-to-r from-gray-900 via-purple-900/20 to-gray-900" />
       <div className="absolute inset-0 opacity-10">
-        <div className="absolute inset-0 bg-gradient-to-r from-[#00cfff] to-[#0044ff] bg-[length:100px_100px]" />
+        <div className="absolute inset-0 bg-black bg-[length:100px_100px]" />
       </div>
 
       {/* Header */}

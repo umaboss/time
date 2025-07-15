@@ -43,11 +43,45 @@ const places = [
     image: '/assests/p5.jpg',
     tags: ['Roman', 'UNESCO', 'Guided Tour'],
   },
+  {
+    id: 2,
+    title: 'Santorini Cliffs',
+    description: 'Blue domes, sunset magic, Aegean sea charm.',
+    image: '/assests/p2.jpg',
+    tags: ['Sunset', 'Sea View', 'Honeymoon'],
+  },
+  {
+    id: 4,
+    title: 'Banff National Park',
+    description: 'Turquoise lakes, wildlife, majestic peaks.',
+    image: '/assests/p4.jpg',
+    tags: ['Lakes', 'Nature', 'Camping'],
+  },
+  {
+    id: 3,
+    title: 'Great Wall of China',
+    description: 'Historic defense marvel across northern China.',
+    image: '/assests/p3.jpg',
+    tags: ['UNESCO', 'Hiking', 'History'],
+  },
 ];
 
 export default function PlacesSlider() {
   return (
-    <div className="bg-black min-h-screen relative z-0">
+    <div className="relative min-h-screen overflow-hidden z-0">
+      {/* 🎬 Background Video */}
+      <video
+        className="absolute top-0 left-0 w-full h-full object-cover z-0"
+        src="/assests/video.mp4"
+        autoPlay
+        loop
+        muted
+        playsInline
+      />
+
+      {/* Overlay (optional for darkening the video) */}
+      <div className="absolute inset-0 bg-black/60 z-0" />
+
       <section className="py-16 text-white relative z-10">
         {/* Heading */}
         <div className="text-center mb-10">
@@ -76,7 +110,7 @@ export default function PlacesSlider() {
           {places.map((place) => (
             <SwiperSlide key={place.id}>
               <div className="relative group rounded-2xl overflow-hidden shadow-xl border border-white/10">
-                {/* Image container with background fallback */}
+                {/* Image */}
                 <div className="relative w-full h-[400px] bg-black">
                   <img
                     src={place.image}

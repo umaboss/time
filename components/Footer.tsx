@@ -91,13 +91,6 @@ export default function Footer() {
               Crafting the future of digital experiences through innovative design 
               and cutting-edge technology.
             </p>
-            <div className="flex items-center gap-2 text-sm text-gray-500">
-              <span>Made with</span>
-              <Heart className="w-4 h-4 text-red-500 animate-pulse" />
-              <span>and</span>
-              <Code className="w-4 h-4 text-[#00ff88]" />
-              <span>by our team</span>
-            </div>
           </div>
 
           {/* Footer links */}

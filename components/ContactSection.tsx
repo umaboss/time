@@ -6,9 +6,6 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import {
   Send,
-  Mail,
-  Phone,
-  MapPin,
   Github,
   Twitter,
   Linkedin,
@@ -63,19 +60,19 @@ export default function ContactSection() {
 
   const contactInfo = [
     {
-      icon: Mail,
+      icon: '/assests/email.png',
       label: 'Email',
       value: 'hello@studioparallax.com',
       href: 'mailto:hello@studioparallax.com',
     },
     {
-      icon: Phone,
+      icon: '/assests/phone.png',
       label: 'Phone',
       value: '+1 (555) 123-4567',
       href: 'tel:+15551234567',
     },
     {
-      icon: MapPin,
+      icon: '/assests/location.png',
       label: 'Location',
       value: 'San Francisco, CA',
       href: '#',
@@ -102,7 +99,7 @@ export default function ContactSection() {
       </div>
 
       {/* Content Container */}
-      <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-12">
+      <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8">
         {/* Heading */}
         <div className="mb-20 text-center">
           <motion.h2
@@ -111,12 +108,12 @@ export default function ContactSection() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
           >
-        <div className='flex text-center justify-center items-center'>
-        <span className="">Get In</span>
-            <span className="bg-gradient-to-r from-[#00ff88] via-[#ff0080] to-[#0080ff] bg-clip-text text-transparent">
-              Touch
-            </span>
-        </div>
+            <div className="flex text-center justify-center items-center">
+              <span className="">Get In</span>
+              <span className="bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent ml-2">
+                Touch
+              </span>
+            </div>
           </motion.h2>
           <p className="mt-4 max-w-xl mx-auto text-lg text-gray-400">
             Let’s build something amazing together. Drop us a message below!
@@ -124,7 +121,59 @@ export default function ContactSection() {
         </div>
 
         {/* Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
+          {/* Contact Info + Social */}
+          <motion.div
+            initial={{ opacity: 0, x: 60 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            className="space-y-10"
+          >
+            <div>
+              <h3 className="text-2xl font-bold text-white mb-4">Let’s Connect</h3>
+              <p className="text-gray-400 max-w-md">
+                We're here to collaborate and innovate. Let’s talk and see how we can help you.
+              </p>
+            </div>
+
+            {/* Contact Info Cards with Images */}
+            <div className="space-y-4">
+              {contactInfo.map(({ icon, label, value, href }, i) => (
+                <motion.a
+                  key={i}
+                  href={href}
+                  className="flex items-center gap-4 p-4 rounded-xl bg-white/5 backdrop-blur-md border border-white/10 hover:border-[#00ff88]/60 transition-all"
+                  whileHover={{ scale: 1.03, x: 8 }}
+                >
+                  <img src={icon} alt={label} className="w-8 h-8 object-contain" />
+                  <div>
+                    <p className="text-sm text-gray-400">{label}</p>
+                    <p className="text-white font-medium">{value}</p>
+                  </div>
+                </motion.a>
+              ))}
+            </div>
+
+            {/* Social Icons */}
+            <div>
+              <h4 className="text-lg font-semibold text-white mb-3">Follow Us</h4>
+              <div className="flex gap-4">
+                {socialLinks.map(({ icon: Icon, href, label }, i) => (
+                  <motion.a
+                    key={i}
+                    href={href}
+                    aria-label={label}
+                    className="p-3 rounded-lg bg-white/5 border border-white/10 text-white hover:text-[#00ff88] hover:border-[#00ff88] transition-all"
+                    whileHover={{ rotate: 10, scale: 1.1 }}
+                    whileTap={{ scale: 0.9 }}
+                  >
+                    <Icon className="w-5 h-5" />
+                  </motion.a>
+                ))}
+              </div>
+            </div>
+          </motion.div>
+
           {/* Contact Form */}
           <motion.form
             ref={formRef}
@@ -184,63 +233,11 @@ export default function ContactSection() {
               }}
               whileTap={{ scale: 0.95 }}
               type="submit"
-              className="w-full flex items-center justify-center gap-2 bg-gradient-to-r from-[#00ff88] to-[#ff0080] py-3 text-black font-semibold text-lg rounded-lg transition-all"
+              className="w-full flex items-center justify-center gap-2 bg-gradient-to-r from-[#00cfff] to-[#0044ff] py-3 text-black font-semibold text-lg rounded-lg transition-all"
             >
               Send Message <Send size={20} />
             </motion.button>
           </motion.form>
-
-          {/* Contact Info + Social */}
-          <motion.div
-            initial={{ opacity: 0, x: 60 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            className="space-y-10"
-          >
-            <div>
-              <h3 className="text-2xl font-bold text-white mb-4">Let’s Connect</h3>
-              <p className="text-gray-400 max-w-md">
-                We're here to collaborate and innovate. Let’s talk and see how we can help you.
-              </p>
-            </div>
-
-            {/* Contact Info Cards */}
-            <div className="space-y-4">
-              {contactInfo.map(({ icon: Icon, label, value, href }, i) => (
-                <motion.a
-                  key={i}
-                  href={href}
-                  className="flex items-center gap-4 p-4 rounded-xl bg-white/5 backdrop-blur-md border border-white/10 hover:border-[#00ff88]/60 transition-all"
-                  whileHover={{ scale: 1.03, x: 8 }}
-                >
-                  <Icon className="w-6 h-6 text-[#00ff88]" />
-                  <div>
-                    <p className="text-sm text-gray-400">{label}</p>
-                    <p className="text-white font-medium">{value}</p>
-                  </div>
-                </motion.a>
-              ))}
-            </div>
-
-            {/* Social Icons */}
-            <div>
-              <h4 className="text-lg font-semibold text-white mb-3">Follow Us</h4>
-              <div className="flex gap-4">
-                {socialLinks.map(({ icon: Icon, href, label }, i) => (
-                  <motion.a
-                    key={i}
-                    href={href}
-                    aria-label={label}
-                    className="p-3 rounded-lg bg-white/5 border border-white/10 text-white hover:text-[#00ff88] hover:border-[#00ff88] transition-all"
-                    whileHover={{ rotate: 10, scale: 1.1 }}
-                    whileTap={{ scale: 0.9 }}
-                  >
-                    <Icon className="w-5 h-5" />
-                  </motion.a>
-                ))}
-              </div>
-            </div>
-          </motion.div>
         </div>
       </div>
     </section>

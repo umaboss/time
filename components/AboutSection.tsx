@@ -1,27 +1,24 @@
-// AboutSection.jsx
 'use client';
 
 import { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { MapPin, Plane, Compass, Camera } from 'lucide-react';
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function AboutSection() {
-  const sectionRef   = useRef<HTMLElement | null>(null);
-  const titleRef     = useRef<HTMLHeadingElement | null>(null);
-  const contentRef   = useRef<HTMLDivElement | null>(null);
+  const sectionRef = useRef<HTMLElement | null>(null);
+  const titleRef = useRef<HTMLHeadingElement | null>(null);
+  const contentRef = useRef<HTMLDivElement | null>(null);
 
-  /* ───────────────────────── GSAP PIN + FADE IN ───────────────────────── */
   useEffect(() => {
     const section = sectionRef.current;
-    const title   = titleRef.current;
+    const title = titleRef.current;
     const content = contentRef.current;
     if (!section || !title || !content) return;
 
-    // pin whole section
+    // Pin section
     ScrollTrigger.create({
       trigger: section,
       start: 'top top',
@@ -30,7 +27,7 @@ export default function AboutSection() {
       pinSpacing: false,
     });
 
-    // animate title
+    // Title animation
     gsap.fromTo(
       title,
       { x: -100, opacity: 0 },
@@ -47,7 +44,7 @@ export default function AboutSection() {
       }
     );
 
-    // animate each feature card
+    // Animate feature cards
     if (content && content.children) {
       gsap.fromTo(
         Array.from(content.children),
@@ -70,38 +67,37 @@ export default function AboutSection() {
     return () => ScrollTrigger.getAll().forEach(t => t.kill());
   }, []);
 
-  /* ───────────────────────── TRAVEL‑FOCUSED FEATURES ───────────────────────── */
+  // Features with images instead of Lucide icons
   const features = [
     {
-      icon: <MapPin className="w-8 h-8" />,
+      icon: '/assests/location.png',
       title: 'Curated Destinations',
       description: 'Hand‑picked places reviewed by travel experts worldwide.',
     },
     {
-      icon: <Plane className="w-8 h-8" />,
+      icon: '/assests/airplane.png',
       title: 'Seamless Booking',
       description: 'Flights, hotels & experiences—confirmed in a single tap.',
     },
     {
-      icon: <Compass className="w-8 h-8" />,
+      icon: '/assests/compass.png',
       title: 'Smart Itineraries',
       description: 'AI plans trips around your mood, budget and timeline.',
     },
     {
-      icon: <Camera className="w-8 h-8" />,
+      icon: '/assests/photo.png',
       title: 'Live Memories',
       description: 'Capture & share moments with fellow travellers in real time.',
     },
   ];
 
-  /* ───────────────────────── JSX ───────────────────────── */
   return (
     <section
       ref={sectionRef}
       id="about"
       className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 flex items-center relative overflow-hidden"
     >
-      {/* floating radial highlights */}
+      {/* Floating radial gradients */}
       <div className="absolute inset-0 opacity-10">
         <div
           className="absolute inset-0"
@@ -114,14 +110,11 @@ export default function AboutSection() {
       </div>
 
       <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
-        {/* LEFT: Copy & CTA */}
+        {/* LEFT: Text and CTA */}
         <div>
-          <h2
-            ref={titleRef}
-            className="  mb-8 leading-tight"
-          >
+          <h2 ref={titleRef} className="mb-8 leading-tight">
             <strong className="block mb-[10px] text-[18px] text-white">Turning Journeys into</strong>
-            <h2 className="block text-bold text-[42px] bg-gradient-to-r from-[#00ff88] to-[#ff0080] bg-clip-text ">
+            <h2 className="block text-bold text-[42px] bg-gradient-to-r from-[#00ff88] to-[#ff0080] bg-clip-text">
               Lifetime Memories
             </h2>
           </h2>
@@ -143,25 +136,26 @@ export default function AboutSection() {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <button className="px-8 py-4  bg-gradient-to-r from-[#00cfff] to-[#0044ff] text-black font-bold rounded-full text-lg shadow-lg hover:shadow-xl transition-all">
+            <button className="px-8 py-4 bg-gradient-to-r from-[#00cfff] to-[#0044ff] text-black font-bold rounded-full text-lg shadow-lg hover:shadow-xl transition-all">
               Discover Our Story
             </button>
           </motion.div>
         </div>
 
-        {/* RIGHT: Feature cards */}
-        <div
-          ref={contentRef}
-          className="grid grid-cols-1 sm:grid-cols-2 gap-8"
-        >
+        {/* RIGHT: Feature cards with images */}
+        <div ref={contentRef} className="grid grid-cols-1 sm:grid-cols-2 gap-8">
           {features.map((f, i) => (
             <motion.div
               key={i}
               className="group p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover:border-[#00ff88]/50 transition-all"
               whileHover={{ y: -10, scale: 1.02 }}
             >
-              <div className="text-[#00ff88] mb-4 group-hover:scale-110 transition-transform">
-                {f.icon}
+              <div className="mb-4 group-hover:scale-110 transition-transform">
+                <img
+                  src={f.icon}
+                  alt={f.title}
+                  className="w-10 h-10"
+                />
               </div>
               <h3 className="text-xl font-bold text-white mb-3">{f.title}</h3>
               <p className="text-gray-400 leading-relaxed">{f.description}</p>

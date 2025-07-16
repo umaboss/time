@@ -42,10 +42,10 @@ export default function StickyScrollCards() {
     },
     {
       id: 4,
-      title: "Data Analytics",
-      subtitle: "Business Intelligence",
+      title: "Trip",
+      subtitle: "Trip Services",
       description: "Transforming raw data into actionable insights that drive business growth and informed decision-making.",
-      image: "https://images.pexels.com/photos/373543/pexels-photo-373543.jpeg?auto=compress&cs=tinysrgb&w=800",
+      image: "/assests/p7.jpg",
       gradient: "from-[#3ABEFF] to-[#004D99]",
       bgColor: "#100a1a",
     },

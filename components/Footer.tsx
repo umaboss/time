@@ -83,7 +83,7 @@ export default function Footer() {
           <div>
             <motion.div
               whileHover={{ scale: 1.05 }}
-              className="text-3xl font-bold bg-gradient-to-r from-[#00ff88] to-[#ff0080] bg-clip-text text-transparent mb-4"
+              className="text-3xl font-bold bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent mb-4"
             >
               Tim Digital
             </motion.div>
@@ -149,7 +149,7 @@ export default function Footer() {
 
             <div className="flex items-center gap-2 text-sm text-gray-500">
               <Zap className="w-4 h-4 text-yellow-500" />
-              <span>Powered by Innovation</span>
+              <span>Powered by Genroar</span>
             </div>
           </div>
         </div>

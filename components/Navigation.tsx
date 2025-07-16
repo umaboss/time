@@ -41,7 +41,10 @@ export default function Navigation() {
           whileHover={{ scale: 1.05 }}
           className="text-2xl font-bold glow-text"
         >
-          Tim Digital
+         <div className="flex items-center gap-[10px]">
+         <img className='w-12 h-12' src="/assests/logo.png" alt="" />
+         Tim Digital
+         </div>
         </motion.div>
 
         {/* Desktop Menu */}

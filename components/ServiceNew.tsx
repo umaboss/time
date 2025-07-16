@@ -111,14 +111,11 @@ const ServiceNew = () => {
               Hotels
             </span>
           </h2>
-          <p className="text-white/60 text-lg">
-            Scroll horizontally to explore hotels
-          </p>
         </motion.div>
       </div>
 
       {/* Scroll container */}
-      <div className="absolute top-[40%] bottom-[80px] h-[40%] inset-0 flex items-center">
+      <div className="absolute top-[45%] bottom-[80px] h-[40%] inset-0 flex items-center">
         <div ref={containerRef} className="flex gap-10 px-10 w-fit">
           {hotelData.map((hotel, index) => (
             <div
@@ -128,7 +125,7 @@ const ServiceNew = () => {
               }}
               className="w-[100vw] flex justify-center"
             >
-              <div className="w-full h-[350px] mb-[50px] mx-auto">
+              <div className="w-[900px]  mb-[50px] mx-auto">
                 <div className="bg-white/5 backdrop-blur-xl rounded-3xl p-8 md:p-12 border border-white/10 shadow-2xl">
                   <div className="flex flex-col md:flex-row justify-between gap-8 items-center">
                     {/* Text */}
@@ -161,11 +158,11 @@ const ServiceNew = () => {
 
                     {/* Image */}
                     <div className="relative">
-                      <div className="aspect-[4/3] h-[300px] rounded-2xl overflow-hidden bg-gradient-to-br from-purple-500/20 to-cyan-500/20 backdrop-blur-sm">
+                      <div className="aspect-[4/3]  rounded-2xl overflow-hidden bg-gradient-to-br from-purple-500/20 to-cyan-500/20 backdrop-blur-sm">
                         <img
                           src={hotel.image}
                           alt={hotel.title}
-                          className="w-full h-[300px] object-cover opacity-80 mix-blend-overlay"
+                          className="w-full h-[600px]  object-cover opacity-80 mix-blend-overlay"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
                       </div>

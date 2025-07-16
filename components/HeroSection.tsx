@@ -275,7 +275,7 @@ const HeroSection: React.FC = () => {
           </div>
 
           {/* --- Center robot --- */}
-          <div className="col-span-6 flex flex-col mt-[80px] items-center space-y-8">
+          <div className="col-span-6 flex flex-col mt-[] items-center space-y-8">
             <div className="relative group">
               <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 to-purple-600/20 rounded-3xl blur-xl animate-pulse" />
               <div className="relative bg-black/40 backdrop-blur-xl rounded-3xl p-8 border border-cyan-500/30 overflow-hidden">
@@ -344,7 +344,7 @@ const HeroSection: React.FC = () => {
               </div>
             </div>
 
-            <div className="w-full max-w-3xl mx-auto bg-white/5 border border-white/10 rounded-2xl backdrop-blur-md shadow-lg p-4">
+            <div className="w-full max-w-3xl mx-auto bg-white/5 border border-white/10 rounded-2xl backdrop-blur-md shadow-lg p-2 ">
               <div className="relative">
                 <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-cyan-400 w-5 h-5" />
                 <input
@@ -352,7 +352,7 @@ const HeroSection: React.FC = () => {
                   placeholder="Ask anything or plan your next AI trip..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full pl-12 pr-10 py-3 bg-transparent text-white placeholder-white/60 border-none focus:outline-none focus:ring-2 focus:ring-cyan-500 rounded-xl text-base"
+                  className="w-full pl-12 pr-10 py-1 bg-transparent text-white placeholder-white/60 border-none focus:outline-none focus:ring-2 focus:ring-cyan-500 rounded-xl text-base"
                 />
                 <button className="absolute right-3 top-1/2 transform -translate-y-1/2 text-cyan-400 hover:text-cyan-300 transition">
                   <Sparkles className="w-5 h-5" />

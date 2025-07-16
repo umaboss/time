@@ -13,9 +13,10 @@ import Footer from '@/components/Footer';
 import Lenis from 'lenis';
 import ServicesNew from '@/components/ServiceNew';
 import TestimonialsSection from '@/components/TestimonialsSection';
+import CustomCursor from '@/components/CustomCursor';
 
 export default function Home() {
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     // Initialize smooth scroll
@@ -55,6 +56,7 @@ export default function Home() {
       <Navigation />
       
       <main>
+        <CustomCursor/>
         <HeroSection />
         <StickyScrollCards />
         <AboutSection />
@@ -63,7 +65,6 @@ export default function Home() {
         <TestimonialsSection />
         <ContactSection />
       </main>
-      
       <Footer />
     </div>
   );
